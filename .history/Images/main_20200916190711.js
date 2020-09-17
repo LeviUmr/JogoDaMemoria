@@ -1,1 +1,0 @@
-const cardBoard = document.querySelector("#cardBoard")
