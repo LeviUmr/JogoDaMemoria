@@ -1,5 +1,6 @@
 const cardBoard = document.querySelector("#cardBoard")
 
+
 const images = [
     '001-cat.svg','002-horse.svg','003-gorilla.svg','004-snake.svg','005-toucan.svg', '006-jaguar.svg',
     
