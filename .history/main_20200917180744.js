@@ -67,7 +67,7 @@ function resetCards(isMatch = false){
 (function random(){
     cards.forEach( card => {
         let rand = Math.floor(Math.random()*12);
-        card.style.order = rand;
+        card.
     } )
 })()
 

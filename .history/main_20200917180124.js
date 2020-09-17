@@ -41,7 +41,7 @@ function flipCard(){
 
 function checkForMatch(){
     let isMatch = firstCard.dataset.card === secondCard.dataset.card    
-    !isMatch ? disableCards():resetCards(isMatch);
+    !isMatch ? disableCards():resetCards;
 }
 
 function disableCards(){
@@ -55,20 +55,9 @@ function disableCards(){
     
 }
 
-function resetCards(isMatch = false){
-    if(isMatch){
-        firstCard.removeEventListener('click',flipCard)
-        secondCard.removeEventListener('click',flipCard)
-    }
+function resetCards(){
     [firstCard, secondCard, lockCard ] = [null, null, false];
 
 }
-
-(function random(){
-    cards.forEach( card => {
-        let rand = Math.floor(Math.random()*12);
-        card.style.order = rand;
-    } )
-})()
 
 cards.forEach(card => card.addEventListener('click' , flipCard ));

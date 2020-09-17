@@ -55,20 +55,9 @@ function disableCards(){
     
 }
 
-function resetCards(isMatch = false){
-    if(isMatch){
-        firstCard.removeEventListener('click',flipCard)
-        secondCard.removeEventListener('click',flipCard)
-    }
+function resetCards(isMatch){
     [firstCard, secondCard, lockCard ] = [null, null, false];
 
 }
-
-(function random(){
-    cards.forEach( card => {
-        let rand = Math.floor(Math.random()*12);
-        card.style.order = rand;
-    } )
-})()
 
 cards.forEach(card => card.addEventListener('click' , flipCard ));

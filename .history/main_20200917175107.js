@@ -22,10 +22,8 @@ cardBoard.innerHTML = HTML + HTML;
 
 const cards = document.querySelectorAll('.memory-card');
 let firstCard, secondCard;
-let lockCard = false;
 
 function flipCard(){
-    if(lockCard) return false;
     this.classList.add("flip");
     
     if(!firstCard){
@@ -41,34 +39,13 @@ function flipCard(){
 
 function checkForMatch(){
     let isMatch = firstCard.dataset.card === secondCard.dataset.card    
-    !isMatch ? disableCards():resetCards(isMatch);
+    !isMatch ? disableCards():true;
 }
 
 function disableCards(){
-    lockCard = true;
-
-    setTimeout(()=>{
-        firstCard.classList.remove("flip");
-        secondCard.classList.remove("flip");
-        resetCards();
-    }, 500)
+    setTimeout(()=>firstCard.classList.remove("flip");
+    sencondCard.classList.remove("flip");}1000s;)
     
 }
-
-function resetCards(isMatch = false){
-    if(isMatch){
-        firstCard.removeEventListener('click',flipCard)
-        secondCard.removeEventListener('click',flipCard)
-    }
-    [firstCard, secondCard, lockCard ] = [null, null, false];
-
-}
-
-(function random(){
-    cards.forEach( card => {
-        let rand = Math.floor(Math.random()*12);
-        card.style.order = rand;
-    } )
-})()
 
 cards.forEach(card => card.addEventListener('click' , flipCard ));
